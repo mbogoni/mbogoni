@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Ressonância Magnética de Mama</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Ressonância Magnética de Mama</h1>
+        
+        <!-- Nódulo -->
+        <div class="section">
+            <label for="nodule">Nódulo:</label>
+            <select id="nodule">
+                <option value="none">Nenhum</option>
+                <option value="present">Presente</option>
+            </select>
+        </div>
+
+        <!-- Localização -->
+        <div class="section">
+            <label for="location">Localização:</label>
+            <select id="location">
+                <option value="none">Nenhuma</option>
+                <option value="upper_outer_quadrant">Quadrante Superior Externo</option>
+                <option value="upper_inner_quadrant">Quadrante Superior Interno</option>
+                <option value="lower_outer_quadrant">Quadrante Inferior Externo</option>
+                <option value="lower_inner_quadrant">Quadrante Inferior Interno</option>
+                <option value="central">Central</option>
+            </select>
+        </div>
+
+        <!-- Tamanho -->
+        <div class="section">
+            <label for="size">Tamanho (mm):</label>
+            <input type="number" id="size" min="0">
+        </div>
+
+        <!-- Forma -->
+        <div class="section">
+            <label for="shape">Forma:</label>
+            <select id="shape">
+                <option value="none">Nenhuma</option>
+                <option value="round">Redonda</option>
+                <option value="oval">Oval</option>
+                <option value="irregular">Irregular</option>
+            </select>
+        </div>
+
+        <!-- Margens -->
+        <div class="section">
+            <label for="margins">Margens:</label>
+            <select id="margins">
+                <option value="none">Nenhuma</option>
+                <option value="circumscribed">Circunscritas</option>
+                <option value="not_circumscribed">Não Circunscritas</option>
+            </select>
+        </div>
+
+        <!-- Realce -->
+        <div class="section">
+            <label for="enhancement">Realce:</label>
+            <select id="enhancement">
+                <option value="none">Nenhum</option>
+                <option value="homogeneous">Homogêneo</option>
+                <option value="heterogeneous">Heterogêneo</option>
+                <option value="rim">Realce em Anel</option>
+            </select>
+        </div>
+
+        <!-- BI-RADS -->
+        <div class="section">
+            <label for="birads">Categoria BI-RADS:</label>
+            <select id="birads">
+                <option value="0">0 - Incompleto</option>
+                <option value="1">1 - Negativo</option>
+                <option value="2">2 - Benigno</option>
+                <option value="3">3 - Provavelmente Benigno</option>
+                <option value="4">4 - Suspeito</option>
+                <option value="5">5 - Altamente Suspeito de Malignidade</option>
+                <option value="6">6 - Maligno (Confirmado por Biópsia)</option>
+            </select>
+        </div>
+
+        <!-- Botão para Gerar Relatório -->
+        <button onclick="generateReport()">Gerar Relatório</button>
+
+        <!-- Área para o Relatório Gerado -->
+        <div id="report" class="report-section">
+            <h2>Relatório Gerado:</h2>
+            <pre id="reportOutput"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
